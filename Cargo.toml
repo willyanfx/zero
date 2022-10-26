@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.2.1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 
 
 [target.x86_64-apple-darwin]
