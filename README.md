@@ -33,3 +33,8 @@ cargo fmt -- --check
 ```shell
 cargo audit
 ```
+#### health 
+```shell
+curl -v http://127.0.0.1:8000/health_check
+```
+
