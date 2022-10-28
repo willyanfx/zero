@@ -2,7 +2,7 @@ use std::net::TcpListener;
 use zero::run;
 
 // launch app in the bg
-async fn spawn_app() -> String {
+fn spawn_app() -> String {
     let listener = TcpListener::bind("127.0.0.1:0").expect("Failed to bind random port");
 
     // retrive the port assigned by the OS
@@ -23,10 +23,9 @@ async fn health_check_works() {
     // perform HTTP requests against our app
     let client = reqwest::Client::new();
     // act
+    // Use the returned application address
     let response = client
-        // Use the returned application address
-        // .get(&format!("{}/health_check", &address))
-        .get(concat!("/health_check", &address))
+        .get(&format!("{}/health_check", &address))
         .send()
         .await
         .expect("Failed to execute request.");
