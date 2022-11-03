@@ -38,3 +38,20 @@ cargo audit
 curl -v http://127.0.0.1:8000/health_check
 ```
 
+### DB
+#### Docker
+
+```shell
+docker pull postgres
+```
+We can then launch Postgres with `./scripts/init_db.sh`
+
+```shell
+chmod +x scripts/init_db.sh
+```
+#### sqlx-cli
+provides a command-line interface,manage database mi- grations.
+ 
+```shell
+cargo install sqlx-cli --no-default-features --features postgres
+```
